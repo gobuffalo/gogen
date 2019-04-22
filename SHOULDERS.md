@@ -9,6 +9,8 @@ Thank you to the following **GIANTS**:
 
 * [github.com/gobuffalo/genny](https://godoc.org/github.com/gobuffalo/genny)
 
+* [github.com/gobuffalo/packr/v2](https://godoc.org/github.com/gobuffalo/packr/v2)
+
 * [github.com/markbates/safe](https://godoc.org/github.com/markbates/safe)
 
 * [github.com/pkg/errors](https://godoc.org/github.com/pkg/errors)
