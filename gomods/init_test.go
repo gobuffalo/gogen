@@ -39,10 +39,13 @@ func Test_New_With_Modules(t *testing.T) {
 			mod  string
 		}
 		table := []ts{
-			{"", "", "github.com/gobuffalo/gogen/gomods"},
 			{"coke", "", "coke"},
 			{"github.com\\gobuffalo\\coke", "", "github.com/gobuffalo/coke"},
 			{"", "github.com\\gobuffalo\\coke", "github.com/gobuffalo/coke"},
+		}
+
+		if envy.InGoPath() {
+			table = append(table, ts{"", "", "github.com/gobuffalo/gogen/gomods"})
 		}
 
 		c := build.Default
