@@ -6,7 +6,7 @@ import (
 	"go/parser"
 	"go/printer"
 
-	"github.com/gobuffalo/genny"
+	"github.com/gobuffalo/genny/v2"
 	"github.com/pkg/errors"
 	"golang.org/x/tools/go/ast/astutil"
 )

@@ -3,7 +3,7 @@ package gogen
 import (
 	"bytes"
 
-	"github.com/gobuffalo/genny"
+	"github.com/gobuffalo/genny/v2"
 	"github.com/gobuffalo/gogen/goimports"
 	"github.com/pkg/errors"
 )

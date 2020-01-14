@@ -7,8 +7,7 @@ import (
 	"testing"
 
 	"github.com/gobuffalo/envy"
-	"github.com/gobuffalo/genny"
-	"github.com/gobuffalo/genny/gentest"
+	"github.com/gobuffalo/genny/v2/gentest"
 	"github.com/stretchr/testify/require"
 )
 
@@ -82,14 +81,14 @@ func Test_New_With_Modules(t *testing.T) {
 				r.Len(res.Commands, 2)
 
 				c := res.Commands[0]
-				args := []string{genny.GoBin(), "mod", "init"}
+				args := []string{"go", "mod", "init"}
 				if len(tt.mod) > 0 {
 					args = append(args, tt.mod)
 				}
 				r.Equal(args, c.Args)
 
 				c = res.Commands[1]
-				r.Equal([]string{genny.GoBin(), "mod", "tidy"}, c.Args)
+				r.Equal([]string{"go", "mod", "tidy"}, c.Args)
 			})
 		}
 

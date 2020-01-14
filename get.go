@@ -3,14 +3,14 @@ package gogen
 import (
 	"os/exec"
 
-	"github.com/gobuffalo/genny"
+	"github.com/gobuffalo/genny/v2"
 	"github.com/gobuffalo/gogen/gomods"
 )
 
 func Get(pkg string, args ...string) *exec.Cmd {
 	args = append([]string{"get"}, args...)
 	args = append(args, pkg)
-	cmd := exec.Command(genny.GoBin(), args...)
+	cmd := exec.Command("go", args...)
 	return cmd
 }
 

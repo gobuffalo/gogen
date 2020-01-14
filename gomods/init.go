@@ -6,7 +6,7 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/gobuffalo/genny"
+	"github.com/gobuffalo/genny/v2"
 	"github.com/pkg/errors"
 )
 
@@ -58,7 +58,7 @@ func Init(name string, path string) (*genny.Generator, error) {
 			if len(name) > 0 {
 				args = append(args, name)
 			}
-			cmd := exec.Command(genny.GoBin(), args...)
+			cmd := exec.Command("go", args...)
 			return r.Exec(cmd)
 		})
 	})

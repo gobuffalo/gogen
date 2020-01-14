@@ -3,7 +3,7 @@ package gomods
 import (
 	"os/exec"
 
-	"github.com/gobuffalo/genny"
+	"github.com/gobuffalo/genny/v2"
 )
 
 func Tidy(path string, verbose bool) (*genny.Generator, error) {
@@ -14,7 +14,7 @@ func Tidy(path string, verbose bool) (*genny.Generator, error) {
 			return nil
 		}
 		return r.Chdir(path, func() error {
-			cmd := exec.Command(genny.GoBin(), "mod", "tidy")
+			cmd := exec.Command("go", "mod", "tidy")
 			if verbose {
 				cmd.Args = append(cmd.Args, "-v")
 			}

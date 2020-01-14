@@ -5,7 +5,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/gobuffalo/genny"
+	"github.com/gobuffalo/genny/v2"
 	"github.com/stretchr/testify/require"
 )
 
@@ -21,7 +21,7 @@ func Test_Get(t *testing.T) {
 	r.Len(res.Commands, 1)
 
 	c := res.Commands[0]
-	r.Equal(genny.GoBin()+" get -v -u github.com/gobuffalo/buffalo", strings.Join(c.Args, " "))
+	r.Equal("go get -v -u github.com/gobuffalo/buffalo", strings.Join(c.Args, " "))
 
 	r.Len(res.Files, 0)
 
